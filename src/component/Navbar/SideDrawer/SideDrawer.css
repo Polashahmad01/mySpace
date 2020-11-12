@@ -1,0 +1,43 @@
+.side-drawer {
+    width: 30vh;
+    height: 103vh;
+    background: #124F6A;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    max-width: 400px;
+    z-index: 200;
+    overflow: hidden;
+    transform: translateX(-100%);
+    transition: all 0.3s ease-out;
+}
+
+.side-drawer.open {
+    transform:  translateX(0);
+}
+
+
+.side-drawer ul {
+    height: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.side-drawer ul li {
+    margin: 0.5rem 0;
+}
+
+.toolbar__navigation-icons {
+    height: 18px;
+    width: 18px;
+    margin-right: 0.3rem;
+}
+
+@media (min-width: 769px) {
+    .side-drawer {
+        display: none;
+    }
+}
