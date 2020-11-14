@@ -1,5 +1,5 @@
 .toolbar {
-    margin: 1.4rem 0;
+    margin: 1.4rem;
 }
 
 .container {
@@ -17,6 +17,8 @@
 
 .toolbar__logo {
     margin-left: .5rem;
+    position: absolute;
+    transition: all 0.3s ease-in;
 }
 
 .toolbar__logo p {
@@ -24,16 +26,12 @@
     font-weight: 400;
     margin-bottom: 0;
     margin-top: -.5rem;
-    margin-left: 1rem;
 }
+
 
 .spacer {
     flex: 1;
 }
-
-/* .toolbar__logo p:hover {
-    color: blue;
-} */
 
 .toolbar__navigation-items ul {
     list-style: none;
@@ -43,25 +41,37 @@
 }
 
 .toolbar__navigation-items li {
-    padding: 0 1.1rem;
+    padding-left: 2.5rem;
 }
 
 .toolbar__navigation-items .toolbar__link {
     color: #fff;
     text-decoration: none;
+    font-size: 1rem;
 }
 
 .toolbar__navigation-icons {
     height: 18px;
     width: 18px;
     margin-right: 0.3rem;
+    margin-bottom: -.15rem;
 }
 
-.toolbar__navigation-items .toolbar__link:hover,
-.toolbar__navigation-items .toolbar__link .toolbar__navigation-icons:hover,
-.toolbar__navigation-items .toolbar__link:active {
-    color: blue;
+.myspace-homeicon {
+    margin-bottom: -.11rem;
 }
+
+.cursor {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #fff;
+    position: absolute;
+    transform: translateX(-50%, -50%);
+    pointer-events: none;
+    z-index: -10;
+}
+
 
 @media (max-width: 768px) {
     .toolbar__navigation-items {

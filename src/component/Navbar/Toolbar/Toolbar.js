@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Toolbar.css';
@@ -9,10 +9,25 @@ import AboutIcon from '../../../static/image/icon/icons8-about-512.png';
 import ContactIcon from '../../../static/image/icon/phone-contact.png';
 import DrawerToggleButton from '../SideDrawer/DrawerToggleButton';
 
+
 const Toolbar = (props) => {
+    const mouseCursor = useRef(null);
+
+    useEffect(() => {
+        window.addEventListener('mousemove', cursor);
+    }, []);
+
+    const cursor = (e) => {
+        mouseCursor.current.style.top = e.pageY + "px";
+        mouseCursor.current.style.left = e.pageX + "px";
+    }
+
+    
+
     return (
         <header className="toolbar">
             <div className="container">
+                <div ref={mouseCursor} className="cursor" />
                 <nav className="toolbar__navigation">
                     <div className="toolbar__toggle-button">
                         <DrawerToggleButton click={props.drawerToggleClickHandler} />
@@ -30,7 +45,7 @@ const Toolbar = (props) => {
                                 > <img 
                                         src={HomeIcon} 
                                         alt="mySpace-home-icon" 
-                                        className="toolbar__navigation-icons" 
+                                        className="toolbar__navigation-icons myspace-homeicon" 
                                     />
                                     Home
                                 </Link>
